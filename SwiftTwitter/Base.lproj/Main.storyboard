@@ -20,6 +20,9 @@
                                 <rect key="frame" x="38" y="423" width="338" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="loginImage"/>
+                                <connections>
+                                    <action selector="twitterLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kkK-Yv-JFr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
