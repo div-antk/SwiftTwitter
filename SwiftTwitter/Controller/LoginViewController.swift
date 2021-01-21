@@ -37,8 +37,20 @@ class LoginViewController: UIViewController {
         provider.getCredentialWith(nil) { (credential, error) in
             
             // ActivityIndicatorViewを回す
+            let activityView = NVActivityIndicatorView(frame: self.view.bounds, type: .ballBeat, color: .magenta, padding: .none)
+            
+            self.view.addSubview(activityView)
+            activityView.startAnimating()
             
             // ログインの処理
+            Auth.auth().signIn(with: credential) { (result, error) in
+                if error != nil {
+                    return
+                }
+                activityView.stopAnimating()
+                
+                // 画面遷移
+            }
         }
     }
     
