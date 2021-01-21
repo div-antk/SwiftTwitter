@@ -8,12 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view.
-  }
-
-
+    
+    var userName = String()
+    
+    @IBOutlet weak var meigenLabel: UILabel!
+    
+    @IBOutlet weak var toFeedButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    
 }
 

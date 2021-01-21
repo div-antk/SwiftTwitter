@@ -40,7 +40,7 @@
         <!--View Controller-->
         <scene sceneID="7mc-wP-MpS">
             <objects>
-                <viewController id="fde-M3-WaR" customClass="ViewController" customModule="SwiftTwitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fde-M3-WaR" customClass="ViewController" customModule="SwiftTwitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pa9-G9-VCd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,6 +103,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="oWh-jw-1O8"/>
+                    <connections>
+                        <outlet property="meigenLabel" destination="m0N-6e-O8U" id="b4t-Gc-Mkc"/>
+                        <outlet property="toFeedButton" destination="Hkd-R8-ot8" id="bSW-Qi-5ni"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zDh-dH-jWu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

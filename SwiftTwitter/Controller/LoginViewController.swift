@@ -43,13 +43,17 @@ class LoginViewController: UIViewController {
             activityView.startAnimating()
             
             // ログインの処理
-            Auth.auth().signIn(with: credential) { (result, error) in
+            Auth.auth().signIn(with: credential!) { (result, error) in
                 if error != nil {
                     return
                 }
                 activityView.stopAnimating()
                 
                 // 画面遷移
+                let viewVC = self.storyboard?.instantiateViewController(identifier: "viewVC") as! ViewController
+                
+                viewVC.userName = (result?.user.displayName)!
+                self.navigationController?.pushViewController(viewVC, animated: true)
             }
         }
     }
