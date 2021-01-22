@@ -92,8 +92,15 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
         currentElementName = nil
     }
     
+    // twitterでシェア
     @IBAction func share(_ sender: Any) {
         
+        // アクティビティVCを出す
+        var postString = String()
+        postString = "\(userName)さんを表す名言:\n\(meigenLabel.text!)\n#あなたの名言"
+        let shareItems = [postString] as [String]
+        let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+        present(controller, animated: true, completion: nil)
     }
     
     
