@@ -103,10 +103,22 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
         present(controller, animated: true, completion: nil)
     }
     
-    
     @IBAction func sendData(_ sender: Any) {
         // Firestoreで値を保存する
-        if let quote = meigenLabel.text, let userName = Auth.auth()
+        if let quote = meigenLabel.text,let userName = Auth.auth().currentUser?.uid {
+            db.collection("feed").addDocument(data:
+                [
+                    "userName":Auth.auth().currentUser?.displayName,
+                    "quote":meigenLabel.text,
+                    "photoURL":Auth.auth().currentUser?.photoURL?.absoluteString,
+                    "createdAt":Date().timeIntervalSince1970
+                ])
+            { (error) in
+                if error != nil {
+                    print(error.debugDescription)
+                }
+            }
+        }
     }
     
 }
