@@ -29,7 +29,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
     var parser = XMLParser()
     var feedItem = [FeedItem]()
     
-    var currentElementName = String()
+    var currentElementName:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +56,8 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
     // htmlタグのキーを全部見ていく
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
+        currentElementName = nil
+        
         // <data>タグがあれば中身を取得
         if elementName == "data" {
             self.feedItem.append(FeedItem())
@@ -65,7 +67,27 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        <#code#>
+        
+        if self.feedItem.count > 0 {
+            // meigenとautherを処理していく
+            let lastItem = self.feedItem[self.feedItem.count - 1]
+            print(lastItem)
+            switch self.currentElementName {
+            
+            case "meigen":
+                
+                lastItem.meigen = string
+                
+            case "auther":
+                
+                lastItem.auther = string
+                meigenLabel.text = lastItem.meigen + "\n" + lastItem.auther
+                
+            default:
+                
+                break
+            }
+        }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
