@@ -27,6 +27,9 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
     let transition = BubbleTransition()
     let interactiveTransition = BubbleInteractiveTransition()
     var parser = XMLParser()
+    var feedItem = [FeedItem]()
+    
+    var currentElementName = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +51,25 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
         parser = XMLParser(contentsOf: urlToSend!)!
         parser.delegate = self
         parser.parse()
+    }
+    
+    // htmlタグのキーを全部見ていく
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        
+        // <data>タグがあれば中身を取得
+        if elementName == "data" {
+            self.feedItem.append(FeedItem())
+        } else {
+            currentElementName = elementName
+        }
+    }
+    
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        <#code#>
+    }
+    
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        <#code#>
     }
     
     @IBAction func share(_ sender: Any) {
