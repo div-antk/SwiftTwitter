@@ -53,12 +53,12 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
         parser.parse()
     }
     
-    // htmlタグのキーを全部見ていく
+    // htmlタグのキーを順番に見ていく
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
         currentElementName = nil
         
-        // <data>タグがあれば中身を取得
+        // <data>タグにあたったら中身を取得
         if elementName == "data" {
             self.feedItem.append(FeedItem())
         } else {
@@ -72,26 +72,24 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
             // meigenとautherを処理していく
             let lastItem = self.feedItem[self.feedItem.count - 1]
             print(lastItem)
+            
             switch self.currentElementName {
             
             case "meigen":
-                
                 lastItem.meigen = string
                 
             case "auther":
-                
                 lastItem.auther = string
                 meigenLabel.text = lastItem.meigen + "\n" + lastItem.auther
                 
             default:
-                
                 break
             }
         }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        <#code#>
+        currentElementName = nil
     }
     
     @IBAction func share(_ sender: Any) {
