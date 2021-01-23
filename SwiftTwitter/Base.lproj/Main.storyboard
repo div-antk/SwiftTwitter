@@ -172,6 +172,9 @@
                         <viewLayoutGuide key="safeArea" id="zbw-lB-QT9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="yvI-CE-MhT" id="slf-Wr-LFc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lm-YE-kP5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
