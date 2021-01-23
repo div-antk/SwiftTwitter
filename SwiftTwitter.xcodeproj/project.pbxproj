@@ -15,7 +15,9 @@
 		3B1F0BF725B7033F00D0CFEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B1F0BF525B7033F00D0CFEB /* LaunchScreen.storyboard */; };
 		3B48A5D525B85EA500D33796 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A5D425B85EA300D33796 /* GoogleService-Info.plist */; };
 		3B7C1D9125BAE92400C44384 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C1D9025BAE92300C44384 /* FeedViewController.swift */; };
-		3B7C1D9525BC244100C44384 /* Feeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C1D9425BC244100C44384 /* Feeds.swift */; };
+		3B7C1DA425BC265F00C44384 /* Feeda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C1DA325BC265F00C44384 /* Feeda.swift */; };
+		3B7C1DA825BC26E200C44384 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C1DA625BC26E200C44384 /* FeedCell.swift */; };
+		3B7C1DA925BC26E200C44384 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7C1DA725BC26E200C44384 /* FeedCell.xib */; };
 		3BA87D5F25B70DCD007740C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA87D5E25B70DCD007740C7 /* LoginViewController.swift */; };
 		4B2A5E79E57CB706B5AFF673 /* Pods_SwiftTwitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D12B763C0ACE51F31ED1B0 /* Pods_SwiftTwitter.framework */; };
 /* End PBXBuildFile section */
@@ -31,7 +33,9 @@
 		3B1F0BF825B7033F00D0CFEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B48A5D425B85EA300D33796 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3B7C1D9025BAE92300C44384 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		3B7C1D9425BC244100C44384 /* Feeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeds.swift; sourceTree = "<group>"; };
+		3B7C1DA325BC265F00C44384 /* Feeda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeda.swift; sourceTree = "<group>"; };
+		3B7C1DA625BC26E200C44384 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		3B7C1DA725BC26E200C44384 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		3BA87D5E25B70DCD007740C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6B79FAA2963CD19431F5B47E /* Pods-SwiftTwitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTwitter.release.xcconfig"; path = "Target Support Files/Pods-SwiftTwitter/Pods-SwiftTwitter.release.xcconfig"; sourceTree = "<group>"; };
 		F0EEC2E1909C6A20D1C2785F /* Pods-SwiftTwitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTwitter.debug.xcconfig"; path = "Target Support Files/Pods-SwiftTwitter/Pods-SwiftTwitter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 			children = (
 				3B1F0BEA25B7033C00D0CFEB /* AppDelegate.swift */,
 				3B1F0BEC25B7033C00D0CFEB /* SceneDelegate.swift */,
+				3B7C1D9725BC256C00C44384 /* View */,
 				3B7C1D9325BC241300C44384 /* Model */,
 				3BA87D5C25B70D7F007740C7 /* Controller */,
 				3B1F0BF025B7033C00D0CFEB /* Main.storyboard */,
@@ -87,9 +92,18 @@
 		3B7C1D9325BC241300C44384 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3B7C1D9425BC244100C44384 /* Feeds.swift */,
+				3B7C1DA325BC265F00C44384 /* Feeda.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3B7C1D9725BC256C00C44384 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B7C1DA625BC26E200C44384 /* FeedCell.swift */,
+				3B7C1DA725BC26E200C44384 /* FeedCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		3BA87D5C25B70D7F007740C7 /* Controller */ = {
@@ -182,6 +196,7 @@
 				3B48A5D525B85EA500D33796 /* GoogleService-Info.plist in Resources */,
 				3B1F0BF425B7033F00D0CFEB /* Assets.xcassets in Resources */,
 				3B1F0BF225B7033C00D0CFEB /* Main.storyboard in Resources */,
+				3B7C1DA925BC26E200C44384 /* FeedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,12 +249,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B7C1DA825BC26E200C44384 /* FeedCell.swift in Sources */,
 				3BA87D5F25B70DCD007740C7 /* LoginViewController.swift in Sources */,
 				3B1F0BEF25B7033C00D0CFEB /* ViewController.swift in Sources */,
 				3B7C1D9125BAE92400C44384 /* FeedViewController.swift in Sources */,
 				3B1F0BEB25B7033C00D0CFEB /* AppDelegate.swift in Sources */,
 				3B1F0BED25B7033C00D0CFEB /* SceneDelegate.swift in Sources */,
-				3B7C1D9525BC244100C44384 /* Feeds.swift in Sources */,
+				3B7C1DA425BC265F00C44384 /* Feeda.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
