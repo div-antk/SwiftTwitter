@@ -104,6 +104,9 @@
                                 <state key="normal" title="ログアウト">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logout:" destination="fde-M3-WaR" eventType="touchUpInside" id="Hfm-lY-Vb3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zvx-1i-OEi"/>

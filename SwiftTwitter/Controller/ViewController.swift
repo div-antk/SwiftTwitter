@@ -126,18 +126,28 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
         performSegue(withIdentifier: "feedVD", sender: nil)
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination as? FeedViewController
-        controller.transitioningDelegate = self
-        controller.modalPresentationStyle = .custom
-        controller.modalPresentationCapturesStatusBarAppearance = true
-        controller.interactiveTransition = interactiveTransition
-        interactiveTransition.attach(to: controller)
+    @IBAction func logout(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
     
-    // 以下ライブラリで必要な記述
     
+    // 以下ライブラリで必要な記述
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as? FeedViewController
+        controller!.transitioningDelegate = self
+        controller!.modalPresentationStyle = .custom
+        controller!.modalPresentationCapturesStatusBarAppearance = true
+        
+        controller.interactiveTransition = interactiveTransition
+        interactiveTransition.attach(to: controller!)
+    }
+        
     // 表示する際の設定
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
