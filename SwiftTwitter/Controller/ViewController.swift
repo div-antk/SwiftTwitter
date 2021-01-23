@@ -107,12 +107,12 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
         // Firestoreで値を保存する
         if let quote = meigenLabel.text,let userName = Auth.auth().currentUser?.uid {
             db.collection("feed").addDocument(data:
-                [
-                    "userName":Auth.auth().currentUser?.displayName,
-                    "quote":meigenLabel.text,
-                    "photoURL":Auth.auth().currentUser?.photoURL?.absoluteString,
-                    "createdAt":Date().timeIntervalSince1970
-                ])
+                                                [
+                                                    "userName":Auth.auth().currentUser?.displayName,
+                                                    "quote":meigenLabel.text,
+                                                    "photoURL":Auth.auth().currentUser?.photoURL?.absoluteString,
+                                                    "createdAt":Date().timeIntervalSince1970
+                                                ])
             { (error) in
                 if error != nil {
                     print(error.debugDescription)
@@ -121,5 +121,41 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
         }
     }
     
+    @IBAction func toFeedVC(_ sender: Any) {
+        
+        performSegue(withIdentifier: "feedVD", sender: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as? FeedViewController
+        controller.transitioningDelegate = self
+        controller.modalPresentationStyle = .custom
+        controller.modalPresentationCapturesStatusBarAppearance = true
+        controller.interactiveTransition = interactiveTransition
+        interactiveTransition.attach(to: controller)
+    }
+    
+    // 以下ライブラリで必要な記述
+    
+    // 表示する際の設定
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startingPoint = toFeedButton.center
+        transition.bubbleColor = toFeedButton.backgroundColor!
+        return transition
+    }
+    
+    // 戻るとき
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .dismiss
+        transition.startingPoint = toFeedButton.center
+        transition.bubbleColor = toFeedButton.backgroundColor!
+        return transition
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactiveTransition
+    }
 }
 

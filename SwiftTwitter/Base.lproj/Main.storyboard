@@ -92,7 +92,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Vsh-wB-DcO" kind="presentation" modalPresentationStyle="fullScreen" id="Z1T-Ss-VEd"/>
+                                    <action selector="toFeedVC:" destination="fde-M3-WaR" eventType="touchUpInside" id="Ffb-HO-VHL"/>
+                                    <segue destination="Vsh-wB-DcO" kind="presentation" identifier="feedVC" modalPresentationStyle="fullScreen" id="Z1T-Ss-VEd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJl-9n-d0t">
@@ -136,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="528.98550724637687" y="88.392857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed View Controller-->
         <scene sceneID="xqu-C9-jMy">
             <objects>
-                <viewController id="Vsh-wB-DcO" sceneMemberID="viewController">
+                <viewController id="Vsh-wB-DcO" customClass="FeedViewController" customModule="SwiftTwitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FcB-c5-Un5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
