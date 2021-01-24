@@ -95,6 +95,31 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return cell
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    // TODO:以下3つのメソッドがない場合も確認する
+    
+    // セルとセルの間の余白
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return view.frame.size.height/10
+    }
+    
+    // 背景色を透明
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let marginView = UIView()
+        marginView.backgroundColor = .clear
+        return marginView
+    }
+    
+    // フッターを完全に表示させないようにする
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        return .leastNonzeroMagnitude
+    }
     /*
      // MARK: - Navigation
      
