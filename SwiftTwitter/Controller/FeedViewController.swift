@@ -14,7 +14,7 @@ import FirebaseFirestore
 
 class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var interactiveTransition:BubbleInteractiveTransition
+    var interactiveTransition:BubbleInteractiveTransition?
     
     @IBOutlet weak var tableView: UITableView!
     let db = Firestore.firestore()
@@ -29,18 +29,16 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         // カスタムセル
         
-        
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            <#code#>
-        }
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            <#code#>
-        }
-        
         // Do any additional setup after loading the view.
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
     
     /*
      // MARK: - Navigation
