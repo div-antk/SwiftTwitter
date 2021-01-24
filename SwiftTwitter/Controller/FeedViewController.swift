@@ -36,7 +36,45 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // Do any additional setup after loading the view.
     }
     
-
+    func loadData() {
+        
+        // 投稿されたものを受信する
+        db.collection("feed").order(by: "createAt").addSnapshotListener { (snapShot, error) in
+            
+            self.feeds = []
+            if error != nil {
+                print(error.debugDescription)
+                return
+            }
+            
+            // documentをすべて取得してsnapShotの中に入れる
+            if let snapShotDoc = snapShot?.documents {
+                
+                // documentのidの数だけforを回す
+                for doc in snapShotDoc {
+                    
+                    let data = doc.data()
+                    
+                    // 中身が完全にある場合
+                    if let userName = data["userName"] as? String,
+                       let quote = data["quote"] as? String,
+                       let photoURL = data["photoURL"] as? String {
+                        
+                        let newFeeds = Feeds(userName: userName, quate: quote, profileUrl: photoURL)
+                        self.feeds.append(newFeeds)
+                        // 新しいものから順番に表示したいためreverse
+                        self.feeds.reverse()
+                        
+                        // メインスレッドであるUIの処理が終わってから
+                        DispatchQueue.main.async {
+                            self.tableView.tableFooterView = nil
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         <#code#>
