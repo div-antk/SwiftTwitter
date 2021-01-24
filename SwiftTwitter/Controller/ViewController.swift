@@ -116,6 +116,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
             { (error) in
                 if error != nil {
                     print(error.debugDescription)
+                    return
                 }
             }
         }
@@ -144,7 +145,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
         controller!.modalPresentationStyle = .custom
         controller!.modalPresentationCapturesStatusBarAppearance = true
         
-        controller.interactiveTransition = interactiveTransition
+        controller!.interactiveTransition = interactiveTransition
         interactiveTransition.attach(to: controller!)
     }
         
