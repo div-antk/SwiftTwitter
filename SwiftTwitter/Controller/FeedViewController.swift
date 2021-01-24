@@ -76,12 +76,23 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
+    // 構造体の数だけ返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return feeds.count
     }
     
+    // セルの構築
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedCell
+        
+        cell.userNameLabel.text =  "\(feeds[indexPath.row].userName)さんの名言"
+        
+        cell.quoteLabel.text = feeds[indexPath.row].quate
+        
+        cell.profileImageView.sd_setImage(with: URL(string: feeds[indexPath.row].profileUrl), completed: nil)
+        
+        return cell
     }
     
     /*
