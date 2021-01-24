@@ -28,9 +28,15 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.dataSource = self
         
         // カスタムセル
+        tableView.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: "feedCell")
+        
+        // TODO:これがあることでどうなるのか後ほど確認
+        tableView.separatorStyle = .none
         
         // Do any additional setup after loading the view.
     }
+    
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         <#code#>
