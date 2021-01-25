@@ -104,7 +104,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
     }
     
     @IBAction func sendData(_ sender: Any) {
-        // Firestoreで値を保存する
+        // Firestoreへ値を保存する
         if let quote = meigenLabel.text,let userName = Auth.auth().currentUser?.uid {
             db.collection("feed").addDocument(data:
                                                 [
@@ -112,8 +112,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
                                                     "quote":meigenLabel.text,
                                                     "photoURL":Auth.auth().currentUser?.photoURL?.absoluteString,
                                                     "createdAt":Date().timeIntervalSince1970
-                                                ])
-            { (error) in
+                                                ]) { (error) in
                 if error != nil {
                     print(error.debugDescription)
                     return
@@ -124,7 +123,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
     
     @IBAction func toFeedVC(_ sender: Any) {
         
-        performSegue(withIdentifier: "feedVD", sender: nil)
+        performSegue(withIdentifier: "feedVC", sender: nil)
     }
     
     @IBAction func logout(_ sender: Any) {
@@ -138,7 +137,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
     
     
     // 以下ライブラリで必要な記述
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as? FeedViewController
         controller!.transitioningDelegate = self
@@ -148,7 +147,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
         controller!.interactiveTransition = interactiveTransition
         interactiveTransition.attach(to: controller!)
     }
-        
+    
     // 表示する際の設定
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
