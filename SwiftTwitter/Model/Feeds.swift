@@ -1,5 +1,5 @@
 //
-//  Feeda.swift
+//  Feeds.swift
 //  SwiftTwitter
 //
 //  Created by Takuya Ando on 2021/01/23.

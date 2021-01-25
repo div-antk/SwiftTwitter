@@ -15,7 +15,7 @@
 		3B1F0BF725B7033F00D0CFEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B1F0BF525B7033F00D0CFEB /* LaunchScreen.storyboard */; };
 		3B48A5D525B85EA500D33796 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A5D425B85EA300D33796 /* GoogleService-Info.plist */; };
 		3B7C1D9125BAE92400C44384 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C1D9025BAE92300C44384 /* FeedViewController.swift */; };
-		3B7C1DA425BC265F00C44384 /* Feeda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C1DA325BC265F00C44384 /* Feeda.swift */; };
+		3B7C1DA425BC265F00C44384 /* Feeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C1DA325BC265F00C44384 /* Feeds.swift */; };
 		3B7C1DA825BC26E200C44384 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C1DA625BC26E200C44384 /* FeedCell.swift */; };
 		3B7C1DA925BC26E200C44384 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7C1DA725BC26E200C44384 /* FeedCell.xib */; };
 		3BA87D5F25B70DCD007740C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA87D5E25B70DCD007740C7 /* LoginViewController.swift */; };
@@ -33,7 +33,7 @@
 		3B1F0BF825B7033F00D0CFEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B48A5D425B85EA300D33796 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3B7C1D9025BAE92300C44384 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		3B7C1DA325BC265F00C44384 /* Feeda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeda.swift; sourceTree = "<group>"; };
+		3B7C1DA325BC265F00C44384 /* Feeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeds.swift; sourceTree = "<group>"; };
 		3B7C1DA625BC26E200C44384 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		3B7C1DA725BC26E200C44384 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		3BA87D5E25B70DCD007740C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		3B7C1D9325BC241300C44384 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3B7C1DA325BC265F00C44384 /* Feeda.swift */,
+				3B7C1DA325BC265F00C44384 /* Feeds.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 				3B7C1D9125BAE92400C44384 /* FeedViewController.swift in Sources */,
 				3B1F0BEB25B7033C00D0CFEB /* AppDelegate.swift in Sources */,
 				3B1F0BED25B7033C00D0CFEB /* SceneDelegate.swift in Sources */,
-				3B7C1DA425BC265F00C44384 /* Feeda.swift in Sources */,
+				3B7C1DA425BC265F00C44384 /* Feeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
