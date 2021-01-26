@@ -8,6 +8,8 @@
 import UIKit
 import BubbleTransition
 import Firebase
+//import FirebaseFirestore
+//import FirebaseAuth
 
 class FeedItem {
     var meigen:String!
@@ -128,8 +130,11 @@ class ViewController: UIViewController, XMLParserDelegate, UIViewControllerTrans
     
     @IBAction func logout(_ sender: Any) {
         let firebaseAuth = Auth.auth()
+        self.navigationController?.popViewController(animated: true)
+
         do {
             try firebaseAuth.signOut()
+            
         } catch let error as NSError {
             print(error.localizedDescription)
         }
