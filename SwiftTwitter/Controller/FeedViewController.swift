@@ -33,6 +33,7 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // TODO:これがあることでどうなるのか後ほど確認
         tableView.separatorStyle = .none
         
+        loadData()
         // Do any additional setup after loading the view.
     }
     
@@ -74,6 +75,15 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 }
             }
         }
+    }
+    
+    // ×ボタン
+    @IBAction func back(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+        
+        // TODO:これがあるとないとでどうなるか検証
+        interactiveTransition?.finish()
     }
     
     // 構造体の数だけ返す

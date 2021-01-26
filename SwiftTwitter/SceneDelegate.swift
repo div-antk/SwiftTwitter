@@ -22,9 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
         
+        // Main.storyboardを指定
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        // storyboardのidentifierで名付けたVCをインスタンス化
         let viewVC = storyBoard.instantiateViewController(identifier: "viewVC")
+        // 上記をrootのコントローラとしてインスタンス化
         let navVC = UINavigationController(rootViewController: viewVC)
+        
         window.rootViewController = navVC
         
     } else {

@@ -167,6 +167,9 @@
                                 <rect key="frame" x="274" y="740" width="89" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="back:" destination="Vsh-wB-DcO" eventType="touchUpInside" id="fIR-jU-6Ex"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zbw-lB-QT9"/>
