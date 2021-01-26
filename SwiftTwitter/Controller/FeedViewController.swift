@@ -40,7 +40,7 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func loadData() {
         
         // 投稿されたものを受信する
-        db.collection("feed").order(by: "createAt").addSnapshotListener { (snapShot, error) in
+        db.collection("feed").order(by: "createdAt").addSnapshotListener { (snapShot, error) in
             
             self.feeds = []
             if error != nil {
@@ -96,13 +96,20 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedCell
         
-        cell.userNameLabel.text =  "\(feeds[indexPath.row].userName)さんの名言"
+//        cell.userNameLabel.text =  "\(feeds[indexPath.row]"\(feeds[indexPath.row].userName)さんの名言""
         
-        cell.quoteLabel.text = feeds[indexPath.row].quate
+        cell.quoteLabel.text = "\(feeds[indexPath.row].userName)さんの名言" + "\n" + feeds[indexPath.row].quate
         
         cell.profileImageView.sd_setImage(with: URL(string: feeds[indexPath.row].profileUrl), completed: nil)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        tableView.estimatedRowHeight = 100
+        
+        return UITableView.automaticDimension
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
